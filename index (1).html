@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مصدر الكسب — منتج رقمي تقدر تبيعه تاني وتكسب منه</title>
+<style>
+  :root{
+    --bg:#0f1115;
+    --panel:#171a21;
+    --accent:#2fd28c;
+    --accent-dark:#1ea86f;
+    --text:#eef1f5;
+    --muted:#a6adb8;
+    --card:#1d2129;
+    --danger:#ff6b6b;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Tahoma','Segoe UI',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.7;
+  }
+  header{
+    padding:20px 24px;
+    display:flex;justify-content:space-between;align-items:center;
+    border-bottom:1px solid #232733;
+  }
+  header .logo{font-weight:bold;font-size:20px;color:var(--accent);}
+  header a.cta-small{
+    background:var(--accent);color:#062015;padding:8px 16px;border-radius:8px;
+    text-decoration:none;font-weight:bold;font-size:14px;
+  }
+  .hero{
+    text-align:center;padding:60px 20px 40px;max-width:720px;margin:0 auto;
+  }
+  .badge{
+    display:inline-block;background:var(--card);color:var(--accent);
+    padding:6px 14px;border-radius:20px;font-size:13px;margin-bottom:18px;
+    border:1px solid #2a2f3a;
+  }
+  h1{font-size:30px;line-height:1.4;margin-bottom:16px;}
+  .hero p{color:var(--muted);font-size:16px;margin-bottom:24px;}
+  .features-inline{
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:28px;
+  }
+  .features-inline span{
+    background:var(--card);padding:8px 14px;border-radius:8px;font-size:13px;color:var(--muted);
+    border:1px solid #232733;
+  }
+  .btn-main{
+    display:inline-block;background:var(--accent);color:#062015;
+    padding:14px 32px;border-radius:10px;font-weight:bold;font-size:17px;
+    text-decoration:none;
+  }
+  .highlight-box{
+    max-width:600px;margin:40px auto;background:var(--card);
+    border:1px solid var(--accent-dark);border-radius:14px;padding:24px;text-align:center;
+  }
+  .highlight-box h3{color:var(--accent);margin-bottom:8px;font-size:18px;}
+  .highlight-box p{color:var(--muted);font-size:14px;}
+  section{max-width:820px;margin:0 auto;padding:50px 20px;}
+  section h2{font-size:24px;text-align:center;margin-bottom:8px;}
+  section .subtitle{text-align:center;color:var(--muted);margin-bottom:32px;font-size:14px;}
+  .grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;
+  }
+  .grid .item{
+    background:var(--card);padding:20px;border-radius:12px;border:1px solid #232733;
+  }
+  .grid .item .num{color:var(--accent);font-weight:bold;font-size:13px;margin-bottom:6px;}
+  .grid .item h4{font-size:16px;margin-bottom:6px;}
+  .grid .item p{color:var(--muted);font-size:14px;}
+  .why-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;
+  }
+  .why-grid .item{text-align:center;padding:20px;}
+  .why-grid .item .icon{font-size:26px;margin-bottom:10px;}
+  .why-grid .item h4{font-size:15px;margin-bottom:6px;}
+  .why-grid .item p{color:var(--muted);font-size:13px;}
+  .testimonials{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;
+  }
+  .testimonials .card{
+    background:var(--card);padding:20px;border-radius:12px;border:1px solid #232733;
+  }
+  .testimonials .card p{font-size:14px;color:var(--text);margin-bottom:14px;}
+  .testimonials .who{display:flex;align-items:center;gap:10px;}
+  .avatar{
+    width:34px;height:34px;border-radius:50%;background:var(--accent-dark);
+    display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:bold;color:#062015;
+  }
+  .who span{font-size:13px;color:var(--muted);}
+  .pricing{
+    background:var(--card);border:1px solid var(--accent-dark);border-radius:16px;
+    padding:32px;text-align:center;max-width:420px;margin:0 auto;
+  }
+  .pricing h3{font-size:18px;margin-bottom:16px;}
+  .pricing .price{font-size:38px;color:var(--accent);font-weight:bold;margin-bottom:20px;}
+  .pricing ul{list-style:none;text-align:right;margin-bottom:24px;}
+  .pricing ul li{padding:6px 0;color:var(--muted);font-size:14px;}
+  .pricing ul li:before{content:"✓ ";color:var(--accent);font-weight:bold;}
+  .steps{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;}
+  .steps .step{
+    background:var(--card);border-radius:12px;padding:20px;flex:1;min-width:220px;
+    border:1px solid #232733;
+  }
+  .steps .step .n{color:var(--accent);font-weight:bold;font-size:20px;margin-bottom:6px;}
+  .faq details{
+    background:var(--card);border-radius:10px;padding:16px 18px;margin-bottom:10px;
+    border:1px solid #232733;cursor:pointer;
+  }
+  .faq summary{font-weight:bold;font-size:15px;list-style:none;}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq p{margin-top:10px;color:var(--muted);font-size:14px;}
+  .policy-box{
+    background:var(--card);border-radius:12px;padding:24px;border:1px solid #232733;margin-bottom:16px;
+  }
+  .policy-box h3{color:var(--accent);font-size:16px;margin-bottom:10px;}
+  .policy-box p, .policy-box li{color:var(--muted);font-size:14px;margin-bottom:6px;}
+  .policy-box ul{padding-right:20px;}
+  footer{
+    text-align:center;padding:40px 20px;color:var(--muted);font-size:13px;
+    border-top:1px solid #232733;margin-top:40px;
+  }
+  footer a{color:var(--accent);text-decoration:none;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">مصدر الكسب</div>
+  <a class="cta-small" href="#pricing">اشترك دلوقتي</a>
+</header>
+
+<div class="hero">
+  <div class="badge">🔥 عرض لأول 100 شخص فقط — لفترة محدودة</div>
+  <h1>اشتري المنتج ده مرة واحدة... وبيع منه لعملائك آلاف المرات</h1>
+  <p>
+    مصدر الكسب منتج رقمي بيوضحلك إزاي تربح من المنتجات الرقمية،
+    ومعاه ميزة مهمة: تقدر تبيع نفس المنتج ده لناس تانية وتاخد فلوسه لنفسك بالكامل.
+  </p>
+  <div class="features-inline">
+    <span>خطوة بخطوة من غير تعقيد</span>
+    <span>أمثلة وأفكار جاهزة</span>
+    <span>جمل جاهزة تستخدمها في البيع</span>
+    <span>تقدر تبيعه تاني</span>
+  </div>
+  <a class="btn-main" href="#pricing">اشتري الآن</a>
+</div>
+
+<div class="highlight-box">
+  <h3>السعر نزل من 2500 ج.م لـ 350 ج.م — لأول 100 شخص بس</h3>
+  <p>العرض ده لفترة محدودة ولأول 100 مشترك فقط، وبعدها السعر بيرجع تاني. وكمان بتاخد كل التحديثات الجايّة على المحتوى مجانًا مدى الحياة من غير أي دفع إضافي.</p>
+</div>
+
+<div class="highlight-box">
+  <h3>أهم ميزة في العرض: الملف الجاهز معاه حقوق النشر بتاعه</h3>
+  <p>يعني إيه عمليًا: مع الكورس بتستلم منتج رقمي جاهز، وده اللي بتاخد حقوق النشر بتاعته بالتحديد، فتقدر تعرضه على أي حد حابب يشتري وتبيعهوله باسمك وتاخد فلوسه بالكامل.</p>
+</div>
+
+<section>
+  <h2>7 حاجات، كل واحدة تفيدك في خطوة مختلفة</h2>
+  <p class="subtitle">تقدر تستخدمهم لنفسك، وتقدر كمان تبيعهم زي ما هما لعملائك</p>
+  <div class="grid">
+    <div class="item"><div class="num">01</div><h4>شرح المجال</h4><p>فاهم فيه إيه هي المنتجات الرقمية، وإزاي تربح منها، بكلام بسيط ومباشر.</p></div>
+    <div class="item"><div class="num">02</div><h4>أمثلة للمجال</h4><p>أمثلة حقيقية على منتجات بتتباع فعلًا، عشان تفهم الفكرة على أرض الواقع.</p></div>
+    <div class="item"><div class="num">03</div><h4>أسرار المجال</h4><p>حاجات مش كل الناس بتعرفها بتساعدك تبقى أحسن من غيرك من أول يوم.</p></div>
+    <div class="item"><div class="num">04</div><h4>إزاي تسوّق</h4><p>خطوات عملية توضحلك تسوّق للمنتج بتاعك إزاي وتوصله لناس مهتمة فعلًا.</p></div>
+    <div class="item"><div class="num">05</div><h4>أفكار تسويقية</h4><p>أفكار جاهزة تستخدمها في الترويج، بدل ما تحتار تبدأ منين.</p></div>
+    <div class="item"><div class="num">06</div><h4>إزاي تقفل البيعة صح</h4><p>إزاي تتعامل مع العميل من أول ما يسأل لحد ما يدفع فعلًا، من غير ما تضيع البيعة.</p></div>
+    <div class="item"><div class="num">07</div><h4>منتج جاهز معاه حقوق النشر</h4><p>ملف جاهز عليه طلب كبير، وحقوق النشر بتاعته بتاخدها معاك بالكامل، فتقدر تبيعه لعملائك وتاخد الفلوس بالكامل من غير عمولة.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>ليه تختار مصدر الكسب</h2>
+  <div class="why-grid">
+    <div class="item"><div class="icon">🔁</div><h4>تقدر تبيع المنتج آلاف المرات</h4><p>مش مجرد شراء لمرة واحدة، المنتج بيفضل معاك تبيعه براحتك.</p></div>
+    <div class="item"><div class="icon">🌱</div><h4>مناسب للمبتدئين</h4><p>مفيش خبرة مطلوبة، كل حاجة موضحة خطوة بخطوة.</p></div>
+    <div class="item"><div class="icon">⚡</div><h4>استلام فوري</h4><p>بمجرد ما يتأكد التحويل، بتستلم لينك الملفات على طول من غير انتظار.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>قالوا إيه</h2>
+  <p class="subtitle">آراء حقيقية من ناس اشترت مصدر الكسب</p>
+  <div class="testimonials">
+    <div class="card">
+      <p>"الكورس حلو وسهل الفهم، استفدت منه فعلًا."</p>
+      <div class="who"><div class="avatar">أج</div><span>أحمد جمال</span></div>
+    </div>
+    <div class="card">
+      <p>"المحتوى بسيط ومرتب، وصلني المعلومة من غير تعقيد."</p>
+      <div class="who"><div class="avatar">عس</div><span>عبدالله شريف</span></div>
+    </div>
+    <div class="card">
+      <p>"كورس كويس لو حد بيدور على بداية في المجال ده."</p>
+      <div class="who"><div class="avatar">اك</div><span>ايه كمال</span></div>
+    </div>
+    <div class="card">
+      <p>"استفدت من الأمثلة والخطوات، شرح واضح."</p>
+      <div class="who"><div class="avatar">سا</div><span>سارة إبراهيم</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <h2>اشترك مرة واحدة، واستلم كل حاجة</h2>
+  <div class="pricing">
+    <h3>مصدر الكسب — الباقة الكاملة</h3>
+    <div class="price">350 ج.م</div>
+    <ul>
+      <li>شرح المجال</li>
+      <li>أمثلة وأسرار المجال</li>
+      <li>التسويق وأفكاره</li>
+      <li>إزاي تقفل البيعة صح</li>
+      <li>منتج جاهز تبيعه</li>
+    </ul>
+    <a class="btn-main" href="#payment">اشتري الآن</a>
+  </div>
+</section>
+
+<section id="payment">
+  <h2>طريقة الاستلام</h2>
+  <p class="subtitle">خطوتين، وهتبقى جاهز تبدأ</p>
+  <div class="steps">
+    <div class="step">
+      <div class="n">١</div>
+      <h4>حوّل قيمة الاشتراك</h4>
+      <p>350 ج.م عن طريق فودافون كاش على الرقم:<br><strong>01149281269</strong></p>
+    </div>
+    <div class="step">
+      <div class="n">٢</div>
+      <h4>الاستلام</h4>
+      <p>ابعت اسمك وصورة التحويل على تيليجرام، وهيوصلك لينك جوجل درايف أوتوماتيك.</p>
+      <a class="btn-main" style="margin-top:12px;display:inline-block;font-size:14px;padding:10px 20px;" href="https://t.me/ahmedd696" target="_blank">تواصل على تيليجرام الآن</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>سياسة الاسترجاع</h2>
+  <div class="policy-box">
+    <p>نحن حريصون على رضا عملائنا، وفي نفس الوقت بنحمي حقوق الملكية الفكرية للمنتج. لذلك سياسة الاسترجاع كالتالي:</p>
+    <h3>يحق لك استرجاع كامل المبلغ خلال 24 ساعة من وقت الشراء، بشرط:</h3>
+    <ul>
+      <li>إنك لسه ما فتحتش لينك جوجل درايف أو حملت أي ملف من المنتج</li>
+      <li>إرسال طلب الاسترجاع عبر تيليجرام مع إثبات الشراء</li>
+    </ul>
+    <h3>لا يحق الاسترجاع في الحالات التالية:</h3>
+    <ul>
+      <li>بعد فتح لينك التحميل أو الاطلاع على أي جزء من محتوى المنتج</li>
+      <li>بعد مرور 24 ساعة من وقت الشراء</li>
+      <li>في حالة مشاركة أو توزيع الملفات لأطراف أخرى قبل طلب الاسترجاع</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>الشروط والأحكام</h2>
+  <div class="policy-box">
+    <ul>
+      <li>الدعم والتواصل متاح عبر تيليجرام فقط في الوقت الحالي.</li>
+      <li>الأسعار والمحتوى قابلين للتحديث دون إشعار مسبق، والمشتركين الحاليين ياخدوا التحديثات مجانًا.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>لو لسه محتار في حاجة</h2>
+  <div class="faq">
+    <details>
+      <summary>هبيع المنتج ده إزاي بالظبط؟</summary>
+      <p>بمجرد ما تستلم الملفات، تقدر تعرضها على أي حد حابب يشتري وتاخد الفلوس منه مباشرة. مفيش وسيط ومفيش عمولة تدفعها لحد.</p>
+    </details>
+    <details>
+      <summary>بعد التحويل هستلم الملفات إمتى؟</summary>
+      <p>بمجرد ما تبعت صورة التحويل على تيليجرام، بيتبعتلك لينك جوجل درايف أوتوماتيك من غير ما تستنى حد يرد عليك.</p>
+    </details>
+    <details>
+      <summary>ليه التحويل على فودافون كاش والتواصل على تيليجرام؟</summary>
+      <p>عشان يبقى أسرع وأسهل في المتابعة، ولينك التواصل بيظهرلك بعد ما تأكد إنك جاهز تحول مباشرة.</p>
+    </details>
+    <details>
+      <summary>هل ينفع أسترجع فلوسي لو غيّرت رأيي؟</summary>
+      <p>نعم، خلال 24 ساعة من الشراء وقبل فتح لينك التحميل. راجع سياسة الاسترجاع بالتفصيل فوق.</p>
+    </details>
+  </div>
+</section>
+
+<footer>
+  مصدر الكسب — 2026. للتواصل والدعم عبر تيليجرام: <a href="https://t.me/ahmedd696" target="_blank">@ahmedd696</a><br>
+  <a href="#pricing">العودة لأعلى الصفحة</a>
+</footer>
+
+</body>
+</html>
